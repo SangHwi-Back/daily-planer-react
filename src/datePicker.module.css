@@ -1,0 +1,6 @@
+.datePickerContainer {
+    flex: 1;
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px;
+}
