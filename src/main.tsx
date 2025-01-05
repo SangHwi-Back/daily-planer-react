@@ -3,7 +3,11 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root') as HTMLElement;
+root.style.backgroundColor = '#FFFFFF';
+root.style.color = '#000000';
+
+createRoot(root).render(
   <StrictMode>
     <App />
   </StrictMode>,

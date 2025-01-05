@@ -1,0 +1,8 @@
+.plusButton {
+    height: 45px;
+    width: 100%;
+    background-color: #FFA500;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px #000000;
+    color: #FFFFFF;
+}
