@@ -26,16 +26,19 @@ export default function PlanContainer({plan}: Props) {
           </div>
           {/*End of Top Area*/}
           
-          <div className={styles.bottomArea}>
+          <div className={styles.tagArea}>
             {tags.map(tag => (
               <span className={styles.roundedTag}>
-                <div>{tag.name}</div>
+                <div className={styles.subView}>{tag.name}</div>
               </span>
             ))}
           </div>
           {/*End of Bottom Area*/}
           
-          {date}
+          <div className={styles.bottomArea}>
+            {date}
+          </div>
+          
         </div>
         {/*End of Contents Trailing*/}
       </div>

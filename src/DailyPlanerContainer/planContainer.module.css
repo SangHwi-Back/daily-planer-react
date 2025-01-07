@@ -33,20 +33,30 @@
     justify-content: space-evenly;
 }
 
-.contentsTrailing > .bottomArea {
+.contentsTrailing > .tagArea {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.contentsTrailing > .bottomArea {
+
 }
 
 /* End of Contents */
 
 .roundedTag {
-    height: 50px;
+    padding: 5px 10px;
     background-color: #888888;
     color: black;
-    border-radius: 10px;
-    transform: translate(-50%, -50%);
-    text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5), 2px -2px 0 rgba(255, 255, 255, 0.9);
+    border-radius: 7px;
+    align-content: center;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.roundedTag > .subView {
+
 }
 
 .checkBox {
