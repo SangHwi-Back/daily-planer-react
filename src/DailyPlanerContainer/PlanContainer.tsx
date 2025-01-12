@@ -1,5 +1,8 @@
 import styles from "./planContainer.module.css";
 import {Plan} from "./DailyPlanerContainer.tsx";
+import {PlanContext} from "../context/PlanContext.ts";
+import {useContext} from "react";
+import {ModalContext} from "../context/ModalContext.ts";
 
 interface Props {
   plan: Plan;
@@ -7,6 +10,9 @@ interface Props {
 
 export default function PlanContainer({plan}: Props) {
   const {date, name, tags, isChecked, isDone} = plan;
+  const deletePlan = useContext(PlanContext).deletePlan;
+  const setShowModal = useContext(ModalContext).setShowModal;
+  
   return (
     <div className={`${styles.planContainer} + ${isDone ? styles.donePlanContainer : styles.onGoingPlanContainer}`}>
       
@@ -23,6 +29,11 @@ export default function PlanContainer({plan}: Props) {
             <span className={styles.title}>{name}</span>
             <span className={styles.trailingButton}/>
             <span className={styles.trailingButton}/>
+            
+            <button onClick={() => {
+              deletePlan(plan);
+              setShowModal(true);
+            }}>Del</button>
           </div>
           {/*End of Top Area*/}
           

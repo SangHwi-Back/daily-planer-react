@@ -1,7 +1,9 @@
-import {json} from './data';
+// import {json} from '../data.ts';
 import PlanContainer from "./PlanContainer.tsx";
 import styles from './dailyPlanerContainer.module.css'
 import PlusButton from "./PlusButton.tsx";
+import {PlanContext} from "../context/PlanContext.ts";
+import {useContext} from "react";
 
 export type PlanTag = {
   name: string;
@@ -21,8 +23,8 @@ type PlanPerDay = {
 }
 
 export default function DailyPlanerContainer() {
-  const plans: Plan[] = json;
   const planPerDay: PlanPerDay[] = [];
+  const plans = useContext(PlanContext).plans;
   
   plans.forEach((plan) => {
     const index = planPerDay.findIndex((data: PlanPerDay) => data.date === plan.date);
