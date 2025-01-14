@@ -1,4 +1,3 @@
-// import {json} from '../data.ts';
 import PlanContainer from "./PlanContainer.tsx";
 import styles from './dailyPlanerContainer.module.css'
 import PlusButton from "./PlusButton.tsx";
@@ -41,22 +40,6 @@ export default function DailyPlanerContainer() {
   
   return (
     <div className={styles.container}>
-      {planPerDay.map((plan) => (
-          <div className={styles.contents}>
-            <PlusButton/>
-            {plan.plans.map((data) => (
-              <PlanContainer key={data.name} plan={data}/>
-            ))}
-          </div>
-      ))}
-      {planPerDay.map((plan) => (
-          <div className={styles.contents}>
-            <PlusButton/>
-            {plan.plans.map((data) => (
-              <PlanContainer key={data.name} plan={data}/>
-            ))}
-          </div>
-      ))}
       {planPerDay.map((plan) => (
           <div className={styles.contents}>
             <PlusButton/>
