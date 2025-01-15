@@ -1,0 +1,59 @@
+.background {
+    padding: 25px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleArea {
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+}
+
+.subTitleArea {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 20px 0;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+}
+
+.titleTextField {
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #000;
+}
+
+.tagArea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.tagElements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+}
+
+.plusMinusButton {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.plusMinusButton > img {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
