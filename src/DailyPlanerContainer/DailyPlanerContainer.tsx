@@ -42,7 +42,7 @@ export default function DailyPlanerContainer() {
     <div className={styles.container}>
       {planPerDay.map((plan) => (
           <div className={styles.contents}>
-            <PlusButton/>
+            <PlusButton date={plan.date}/>
             {plan.plans.map((data) => (
               <PlanContainer key={data.name} plan={data}/>
             ))}

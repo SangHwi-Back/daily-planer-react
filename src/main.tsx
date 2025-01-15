@@ -20,7 +20,9 @@ createRoot(root).render(
         <BrowserRouter>
           <Routes>
             <Route path={'/'} element={<App/>}/>
-            <Route path={'/insert'} element={<InsertPlan/>}/>
+            <Route path={'/insert'} element={<InsertPlan/>}>
+              <Route path={':date'} element={<InsertPlan/>}/>
+            </Route>
           </Routes>
         </BrowserRouter>
       </PlanContextProvider>

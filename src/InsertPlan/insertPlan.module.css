@@ -1,8 +1,11 @@
 .background {
+    margin: 25px;
     padding: 25px;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
+    border: 1px solid #000;
+    border-radius: 4px;
 }
 
 .titleArea {
