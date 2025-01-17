@@ -12,6 +12,9 @@ root.style.backgroundColor = '#FFFFFF';
 root.style.color = '#000000';
 root.style.width = '100%';
 root.style.height = '100%';
+root.style.colorScheme = 'light';
+
+document.body.style.backgroundColor = '#FFFFFF';
 
 createRoot(root).render(
   <StrictMode>
