@@ -1,14 +1,22 @@
 import mainStyle from '../main.module.css';
 import shrinkStyle from '../shrink.module.css';
 import styles from './insertPlan.module.css';
-import {useState} from "react";
-import {PlanTag} from "../DailyPlanerContainer/DailyPlanerContainer.tsx";
+import {useContext, useState} from "react";
+import {Plan, PlanTag} from "../DailyPlanerContainer/DailyPlanerContainer.tsx";
 import minus from '../assets/minus.png';
 import plus from '../assets/plus.png';
+import buttonStyle from "../DailyPlanerContainer/plusButton.module.css";
+import {useNavigate} from "react-router-dom";
+import {PlanContext} from "../context/PlanContext.ts";
+import {ModalContext} from "../context/ModalContext.ts";
 
 export default function InsertPlan() {
   const [title, setTitle] = useState<string>('');
   const [tags, setTags] = useState<PlanTag[]>([]);
+  
+  const navigate = useNavigate();
+  const planContext = useContext(PlanContext);
+  const modalContext = useContext(ModalContext);
   
   return (
     <div className={`${mainStyle.roundedRectangle} + ${shrinkStyle.shrink}`}>
@@ -49,6 +57,24 @@ export default function InsertPlan() {
             }}/>
           </div>
         ))}
+      </div>
+      
+      <div style={{marginTop: '10px', marginBottom: '10px'}}/>
+      
+      <div className={buttonStyle.plusButton} onClick={() => {
+        const plan: Plan = {
+          date: (new Date()).toDateString(),
+          name: title,
+          isChecked: false,
+          tags: tags,
+          isDone: false
+        }
+        
+        planContext.addPlan(plan);
+        modalContext.setShowModal(true);
+        navigate(-1);
+      }}>
+        +
       </div>
     </div>
   )
